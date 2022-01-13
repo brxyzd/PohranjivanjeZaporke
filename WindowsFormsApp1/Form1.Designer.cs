@@ -92,6 +92,7 @@ namespace WindowsFormsApp1
             this.buttonProvjeri.TabIndex = 5;
             this.buttonProvjeri.Text = "Provjeri";
             this.buttonProvjeri.UseVisualStyleBackColor = true;
+            this.buttonProvjeri.Click += new System.EventHandler(this.buttonProvjeri_Click);
             // 
             // Form1
             // 

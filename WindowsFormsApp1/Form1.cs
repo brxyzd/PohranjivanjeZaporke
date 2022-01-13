@@ -28,6 +28,19 @@ namespace WindowsFormsApp1
             textBoxZaporka.Text = String.Empty;
         }
 
+        private void buttonProvjeri_Click(object sender, EventArgs e)
+        {
+            if (zaporka == textBoxZaporka.Text)
+            {
+                MessageBox.Show("Čestitke! Zaporka je ispravna.", "Uspjeh");
+            }
+            else
+            {
+                MessageBox.Show("Nažalost, zaporka nije ispravna.\nViše sreće drugi put!", "Krivo");
+                
+            }
+        }
+
         private string tekstZadatka = "Pohranjivanje zaporke:\nNapraviti program koji će omogućiti sigurnu pohranu zaporki korištenjem nekog" +
                                       " standardnog hash-algoritma. Program treba imati polje u koje se upiše zaporka te tipke \"Spremi\" i " +
                                       "\"Provjeri\". Korisnik treba upisati zaporku i pritiskom na tipku \"Spremi\" program će hashirati upisani" +

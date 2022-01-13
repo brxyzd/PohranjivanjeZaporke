@@ -24,20 +24,30 @@ namespace WindowsFormsApp1
 
         private void buttonSpremi_Click(object sender, EventArgs e)
         {
-            zaporka = textBoxZaporka.Text;
-            textBoxZaporka.Text = String.Empty;
+            if (textBoxZaporka.Text == String.Empty)
+            {
+                MessageBox.Show("Unesite zaporku prije pritiska na gumb!", "Upozorenje");
+            }
+            else
+            {
+                zaporka = textBoxZaporka.Text;
+                textBoxZaporka.Text = String.Empty;
+            }
         }
 
         private void buttonProvjeri_Click(object sender, EventArgs e)
         {
-            if (zaporka == textBoxZaporka.Text)
+            if (textBoxZaporka.Text == String.Empty)
+            {
+                MessageBox.Show("Unesite zaporku prije pritiska na gumb!", "Upozorenje");
+            }
+            else if (zaporka == textBoxZaporka.Text)
             {
                 MessageBox.Show("Čestitke! Zaporka je ispravna.", "Uspjeh");
             }
             else
             {
                 MessageBox.Show("Nažalost, zaporka nije ispravna.\nViše sreće drugi put!", "Krivo");
-                
             }
         }
 

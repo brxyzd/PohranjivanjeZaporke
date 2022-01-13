@@ -29,13 +29,48 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.labelZadatak = new System.Windows.Forms.Label();
+            this.buttonZadatak = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // labelZadatak
+            // 
+            this.labelZadatak.AutoSize = true;
+            this.labelZadatak.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelZadatak.Location = new System.Drawing.Point(39, 27);
+            this.labelZadatak.Name = "labelZadatak";
+            this.labelZadatak.Size = new System.Drawing.Size(474, 36);
+            this.labelZadatak.TabIndex = 0;
+            this.labelZadatak.Text = "Zadatak - Pohranjivanje zaporke";
+            // 
+            // buttonZadatak
+            // 
+            this.buttonZadatak.Location = new System.Drawing.Point(45, 82);
+            this.buttonZadatak.Name = "buttonZadatak";
+            this.buttonZadatak.Size = new System.Drawing.Size(122, 28);
+            this.buttonZadatak.TabIndex = 1;
+            this.buttonZadatak.Text = "Prikaži zadatak";
+            this.buttonZadatak.UseVisualStyleBackColor = true;
+            this.buttonZadatak.Click += new System.EventHandler(this.buttonZadatak_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Controls.Add(this.buttonZadatak);
+            this.Controls.Add(this.labelZadatak);
+            this.Name = "Form1";
+            this.Text = "Seminarski rad - Antonio Brkic";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label labelZadatak;
+        private System.Windows.Forms.Button buttonZadatak;
     }
 }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace WindowsFormsApp1
 {
@@ -30,7 +31,9 @@ namespace WindowsFormsApp1
             }
             else
             {
-                zaporka = textBoxZaporka.Text;
+                //prilagodi format string u format byte[] koji zahtjeva hashing algoritam
+                var textBoxZaporkaBytes = Encoding.UTF8.GetBytes(textBoxZaporka.Text);
+                zaporka = shaM.ComputeHash(textBoxZaporkaBytes);
                 textBoxZaporka.Text = String.Empty;
             }
         }
@@ -41,7 +44,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Unesite zaporku prije pritiska na gumb!", "Upozorenje");
             }
-            else if (zaporka == textBoxZaporka.Text)
+            else if (zaporka.SequenceEqual(shaM.ComputeHash(Encoding.UTF8.GetBytes(textBoxZaporka.Text))))
             {
                 MessageBox.Show("Čestitke! Zaporka je ispravna.", "Uspjeh");
             }
@@ -60,6 +63,7 @@ namespace WindowsFormsApp1
                                       " tipku \"Provjeri\", program treba hashirati upisani tekst, usporediti to sa sadržajem datoteke u koju je " +
                                       "prije toga bila pohranjena zaporka identična izvornoj ili ne.";
 
-        private string zaporka;
+        private SHA512 shaM = new SHA512Managed();
+        private byte[] zaporka;
     }
 }

@@ -35,6 +35,7 @@ namespace WindowsFormsApp1
             this.textBoxZaporka = new System.Windows.Forms.TextBox();
             this.buttonSpremi = new System.Windows.Forms.Button();
             this.buttonProvjeri = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelZadatak
@@ -92,13 +93,25 @@ namespace WindowsFormsApp1
             this.buttonProvjeri.TabIndex = 5;
             this.buttonProvjeri.Text = "Provjeri";
             this.buttonProvjeri.UseVisualStyleBackColor = true;
+            this.buttonProvjeri.Visible = false;
             this.buttonProvjeri.Click += new System.EventHandler(this.buttonProvjeri_Click);
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(488, 392);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonExit.TabIndex = 6;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(596, 450);
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonProvjeri);
             this.Controls.Add(this.buttonSpremi);
             this.Controls.Add(this.textBoxZaporka);
@@ -120,6 +133,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox textBoxZaporka;
         private System.Windows.Forms.Button buttonSpremi;
         private System.Windows.Forms.Button buttonProvjeri;
+        private System.Windows.Forms.Button buttonExit;
     }
 }
 

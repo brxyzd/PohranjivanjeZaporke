@@ -35,6 +35,9 @@ namespace WindowsFormsApp1
                 var textBoxZaporkaBytes = Encoding.UTF8.GetBytes(textBoxZaporka.Text);
                 zaporka = shaM.ComputeHash(textBoxZaporkaBytes);
                 textBoxZaporka.Text = String.Empty;
+
+                //prikaži gumb za provjeru tek kad je neka zaporka postavljena
+                buttonProvjeri.Visible = true;
             }
         }
 
@@ -65,5 +68,10 @@ namespace WindowsFormsApp1
 
         private SHA512 shaM = new SHA512Managed();
         private byte[] zaporka;
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

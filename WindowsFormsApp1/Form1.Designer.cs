@@ -31,6 +31,8 @@ namespace WindowsFormsApp1
         {
             this.labelZadatak = new System.Windows.Forms.Label();
             this.buttonZadatak = new System.Windows.Forms.Button();
+            this.labelZaporka = new System.Windows.Forms.Label();
+            this.textBoxZaporka = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelZadatak
@@ -53,11 +55,30 @@ namespace WindowsFormsApp1
             this.buttonZadatak.UseVisualStyleBackColor = true;
             this.buttonZadatak.Click += new System.EventHandler(this.buttonZadatak_Click);
             // 
+            // labelZaporka
+            // 
+            this.labelZaporka.AutoSize = true;
+            this.labelZaporka.Location = new System.Drawing.Point(45, 174);
+            this.labelZaporka.Name = "labelZaporka";
+            this.labelZaporka.Size = new System.Drawing.Size(78, 13);
+            this.labelZaporka.TabIndex = 2;
+            this.labelZaporka.Text = "Unesi zaporku:";
+            // 
+            // textBoxZaporka
+            // 
+            this.textBoxZaporka.Location = new System.Drawing.Point(129, 171);
+            this.textBoxZaporka.Name = "textBoxZaporka";
+            this.textBoxZaporka.Size = new System.Drawing.Size(100, 20);
+            this.textBoxZaporka.TabIndex = 3;
+            this.textBoxZaporka.UseSystemPasswordChar = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxZaporka);
+            this.Controls.Add(this.labelZaporka);
             this.Controls.Add(this.buttonZadatak);
             this.Controls.Add(this.labelZadatak);
             this.Name = "Form1";
@@ -71,6 +92,8 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.Label labelZadatak;
         private System.Windows.Forms.Button buttonZadatak;
+        private System.Windows.Forms.Label labelZaporka;
+        private System.Windows.Forms.TextBox textBoxZaporka;
     }
 }
 

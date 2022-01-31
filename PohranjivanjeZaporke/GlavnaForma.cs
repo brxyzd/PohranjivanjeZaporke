@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 
-namespace WindowsFormsApp1
+namespace PohranjivanjeZaporke
 {
-    public partial class Form1 : Form
+    public partial class GlavnaForma : Form
     {
-        public Form1()
+        public GlavnaForma()
         {
             InitializeComponent();
         }
@@ -25,9 +25,10 @@ namespace WindowsFormsApp1
 
         private void buttonSpremi_Click(object sender, EventArgs e)
         {
+            SakrijRezultat();
             if (textBoxZaporka.Text == String.Empty)
             {
-                MessageBox.Show("Unesite zaporku prije pritiska na gumb!", "Upozorenje");
+                MessageBox.Show("Unesite zaporku prije pritiska na gumb!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -45,16 +46,35 @@ namespace WindowsFormsApp1
         {
             if (textBoxZaporka.Text == String.Empty)
             {
-                MessageBox.Show("Unesite zaporku prije pritiska na gumb!", "Upozorenje");
+                PrikaziRezultat(false);
+                MessageBox.Show("Unesite zaporku prije pritiska na gumb!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (zaporka.SequenceEqual(shaM.ComputeHash(Encoding.UTF8.GetBytes(textBoxZaporka.Text))))
             {
+                PrikaziRezultat(true);
                 MessageBox.Show("Čestitke! Zaporka je ispravna.", "Uspjeh");
             }
             else
             {
-                MessageBox.Show("Nažalost, zaporka nije ispravna.\nViše sreće drugi put!", "Krivo");
+                PrikaziRezultat(false);
+                MessageBox.Show("Nažalost, zaporka nije ispravna.\nViše sreće drugi put!", "Krivo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void PrikaziRezultat(bool ispravnaZaporka)
+        {
+            labelBravo.Visible = ispravnaZaporka;
+            labelPogreska.Visible = !ispravnaZaporka;
+        }
+
+        private void SakrijRezultat()
+        {
+            labelBravo.Visible = false;
+            labelPogreska.Visible = false;
         }
 
         private string tekstZadatka = "Pohranjivanje zaporke:\nNapraviti program koji će omogućiti sigurnu pohranu zaporki korištenjem nekog" +
@@ -69,9 +89,6 @@ namespace WindowsFormsApp1
         private SHA512 shaM = new SHA512Managed();
         private byte[] zaporka;
 
-        private void buttonExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
     }
 }

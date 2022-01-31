@@ -1,7 +1,7 @@
 ﻿
-namespace WindowsFormsApp1
+namespace PohranjivanjeZaporke
 {
-    partial class Form1
+    partial class GlavnaForma
     {
         /// <summary>
         /// Required designer variable.
@@ -36,6 +36,8 @@ namespace WindowsFormsApp1
             this.buttonSpremi = new System.Windows.Forms.Button();
             this.buttonProvjeri = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.labelBravo = new System.Windows.Forms.Label();
+            this.labelPogreska = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelZadatak
@@ -98,7 +100,8 @@ namespace WindowsFormsApp1
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(488, 392);
+            this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonExit.Location = new System.Drawing.Point(438, 340);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 6;
@@ -106,11 +109,33 @@ namespace WindowsFormsApp1
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
+            // labelBravo
+            // 
+            this.labelBravo.AutoSize = true;
+            this.labelBravo.Location = new System.Drawing.Point(245, 173);
+            this.labelBravo.Name = "labelBravo";
+            this.labelBravo.Size = new System.Drawing.Size(38, 13);
+            this.labelBravo.TabIndex = 7;
+            this.labelBravo.Text = "Bravo!";
+            this.labelBravo.Visible = false;
+            // 
+            // labelPogreska
+            // 
+            this.labelPogreska.AutoSize = true;
+            this.labelPogreska.Location = new System.Drawing.Point(245, 174);
+            this.labelPogreska.Name = "labelPogreska";
+            this.labelPogreska.Size = new System.Drawing.Size(55, 13);
+            this.labelPogreska.TabIndex = 8;
+            this.labelPogreska.Text = "Pogreška!";
+            this.labelPogreska.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 450);
+            this.ClientSize = new System.Drawing.Size(553, 397);
+            this.Controls.Add(this.labelPogreska);
+            this.Controls.Add(this.labelBravo);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonProvjeri);
             this.Controls.Add(this.buttonSpremi);
@@ -134,6 +159,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button buttonSpremi;
         private System.Windows.Forms.Button buttonProvjeri;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Label labelBravo;
+        private System.Windows.Forms.Label labelPogreska;
     }
 }
 
